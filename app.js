@@ -5,7 +5,7 @@ var express = require('express')
   , routes = require('./routes'); // Routes for our application
 
 //MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
-MongoClient.connect('mongodb://ds041248.mongolab.com:41248/heroku_app36204048', function(err, db){
+MongoClient.connect('mongodb://shutiao:Justin74559@ds041248.mongolab.com:41248/heroku_app36204048', function(err, db){
     "use strict";
     if(err) throw err;
 
