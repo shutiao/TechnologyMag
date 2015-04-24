@@ -23,6 +23,7 @@ MongoClient.connect('mongodb://ds041248.mongolab.com:41248/heroku_app36204048', 
     // Application routes
     routes(app, db);
 
-    app.listen(8082);
-    console.log('Express server listening on port 8082');
-});
+    app.listen(app.get('port'), function(){
+	    console.log('Express server listening on port '+ app.get('port'))
+		});
+    
