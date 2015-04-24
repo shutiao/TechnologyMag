@@ -13,7 +13,7 @@ MongoClient.connect('mongodb://ds041248.mongolab.com:41248/heroku_app36204048', 
     app.engine('html', cons.swig);
     app.set('view engine', 'html');
     app.set('views', __dirname + '/views');
-
+    app.set('port', (process.env.PORT || 8080));
     // Express middleware to populate 'req.cookies' so we can access cookies
     app.use(express.cookieParser());
 
@@ -23,7 +23,6 @@ MongoClient.connect('mongodb://ds041248.mongolab.com:41248/heroku_app36204048', 
     // Application routes
     routes(app, db);
 
-    app.listen(app.get('port'), function(){
-	    console.log('Express server listening on port '+ app.get('port'))
-		});
+    app.listen(app.get('port'));
+	   
     
