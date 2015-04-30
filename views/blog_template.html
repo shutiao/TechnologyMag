@@ -147,14 +147,14 @@
 </div>
 
 {% for post in myposts %}
-<div class="row-fluid section2">
-  <div class="span5 offset1 copy copy-right">
+<div class="row-fluid">
+  <div class="span12 offset1">
     <h2><a href="/post/{{post['permalink']}}">{{post['title']}}</a></h2>
     Posted {{post['date']}} <i>By {{post['author']}}</i><br>
     Comments:
     <a href="/post/{{post['permalink']}}">{{post['comments']|length}}</a>
     <hr>
-    {% autoescape false %}
+  {% autoescape false %}
     {{post['body']}}
     {% endautoescape %}
     <p>
@@ -166,11 +166,57 @@
       {% else %}
       , <a href="/tag/{{tag}}">{{tag}}</a>
       {% endif %}
+      {% endfor %}
   </div>
 </div>
 {% endfor %}
-{% endfor %}
 <p>
+  <div class="row-fluid footer">
+    <div class="span12">
+      <p>This work is licensed under
+        the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC
+          By-SA 3.0
+        </a>, without all the cruft that would otherwise be
+        put at the bottom of the page.</p>
+    </div>
+  </div>
+</div>
+
+      <div class="row-fluid faq">
+          <div class="span10 offset1">
+            <h3>FAQ</h3>
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseOne">
+                    contact us
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    contactus@technologymag.org
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseTwo">
+                    who are we?
+                  </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    We are enthusiastic chinese Post-85s.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	  
+      </div>
+
 </body>
 </html>
 
