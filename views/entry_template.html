@@ -99,12 +99,28 @@
       }
     </style>
     
-    <script type="text/x-mathjax-config">
+    <!--script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script type="text/javascript"
+    </script-->
+    <!--script type="text/javascript"
             src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    </script-->
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config
+        ({
+         asciimath2jax:
+         {
+         delimiters: [['$','$'], ['`','`']],
+         }
+         });
+        </script><!这里对大小写非常的敏感，如果asciimath2jax写成了AsciiMath2jax就执行不了了>
+    
+    <script
+        type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML">
+        </script>
+    
     </head>
   
   <body>
@@ -137,7 +153,7 @@
    </div>
        
        <div class="row-fluid">
-	 <div class="span12 offset1">
+	 <div class="span10 offset1">
 	   <h2>{{post['title']}}</h2>
 	   Posted {{post['date']}}<i> By {{post['author']}}</i><br>
 	   <hr>
